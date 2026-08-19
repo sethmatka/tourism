@@ -199,6 +199,33 @@
 		.info-row i { width: 38px; height: 38px; display: grid; place-items: center; color: var(--gold); border: 1px solid rgba(232,171,40,.45); }
 		.info-row strong { display: block; margin-bottom: 3px; font-size: 12px; text-transform: uppercase; }
 		.info-row span { color: rgba(255,255,255,.66); font-size: 12px; line-height: 1.5; }
+		.safari-calendar { display: grid; gap: 8px; margin-top: 9px; }
+		.safari-season { display: grid; grid-template-columns: minmax(92px, .8fr) 1.2fr; gap: 10px; align-items: center; padding: 8px 0 8px 11px; border-left: 2px solid var(--gold); }
+		.safari-season strong { margin: 0; color: var(--gold-light); font-size: 11px; letter-spacing: 0; }
+		.safari-season span { color: rgba(255,255,255,.82); line-height: 1.35; }
+		.safari-season .zone { display: inline-block; margin-right: 5px; padding: 2px 6px; color: var(--forest-deep); background: var(--gold); font-weight: 700; white-space: nowrap; }
+		.safari-season.closed { border-left-color: rgba(255,255,255,.3); }
+		.safari-season.closed strong { color: rgba(255,255,255,.62); }
+		.safari-season.closed .zone { color: white; background: rgba(255,255,255,.18); }
+		.safari-season.always-open { border-left-color: #69d39a; }
+		.safari-season.always-open strong { color: #8be4b3; }
+		.safari-season.always-open .zone { background: #69d39a; }
+		.safari-hours { grid-column: 1 / -1; margin-top: 4px; border-top: 1px solid rgba(232,171,40,.55); border-bottom: 1px solid rgba(232,171,40,.55); background: rgba(4,26,22,.72); backdrop-filter: blur(6px); }
+		.safari-hours-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 24px; border-bottom: 1px solid rgba(255,255,255,.12); }
+		.safari-hours-title { display: flex; align-items: center; gap: 14px; }
+		.safari-hours-title > i { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; color: var(--forest-deep); background: var(--gold); font-size: 18px; }
+		.safari-hours-title p { margin: 0 0 2px; color: var(--gold-light); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+		.safari-hours-title h3 { margin: 0; font-family: "Bebas Neue", sans-serif; font-size: 29px; line-height: 1; }
+		.safari-hours-note { max-width: 300px; margin: 0; color: rgba(255,255,255,.58); font-size: 10px; line-height: 1.5; text-align: right; }
+		.safari-hours-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; }
+		.safari-hours-cell { min-width: 0; padding: 13px 20px; border-right: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); }
+		.safari-hours-cell:nth-child(3n) { border-right: 0; }
+		.safari-hours-cell:nth-last-child(-n + 3) { border-bottom: 0; }
+		.safari-hours-cell.header { display: flex; align-items: center; gap: 8px; color: var(--gold-light); background: rgba(232,171,40,.09); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+		.safari-hours-cell.header i { color: var(--gold); font-size: 13px; }
+		.safari-hours-cell.date { color: white; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+		.safari-hours-cell.time { color: rgba(255,255,255,.82); font-size: 12px; font-weight: 600; }
+		.safari-hours-cell.time strong { color: var(--gold-light); }
 
 		.transport { padding: 86px 0 90px; background: var(--white); }
 		.transport-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; margin-bottom: 38px; }
@@ -319,6 +346,16 @@
 			.journey { padding: 70px 0; background-attachment: scroll; }
 			.journey h2 { font-size: 46px; }
 			.trip-points { grid-template-columns: 1fr; }
+			.safari-hours-heading { align-items: flex-start; flex-direction: column; gap: 12px; padding: 20px 18px; }
+			.safari-hours-note { max-width: none; text-align: left; }
+			.safari-hours-grid { grid-template-columns: 1fr 1fr; }
+			.safari-hours-cell { padding: 11px 13px; }
+			.safari-hours-cell:nth-child(3n) { border-right: 1px solid rgba(255,255,255,.1); }
+			.safari-hours-cell:nth-last-child(-n + 3) { border-bottom: 1px solid rgba(255,255,255,.1); }
+			.safari-hours-cell.mobile-hidden { display: none; }
+			.safari-hours-cell.date { grid-column: 1 / -1; color: var(--gold-light); background: rgba(232,171,40,.07); border-right: 0; }
+			.safari-hours-cell.time:nth-child(3n) { border-right: 0; }
+			.safari-hours-cell:last-child { border-bottom: 0; }
 			.transport-intro h2 { font-size: 43px; }
 			.vehicle-grid { grid-template-columns: 1fr; }
 			.vehicle-item { min-height: 150px; padding: 24px 20px; }
@@ -400,6 +437,22 @@
 						<div class="place-content"><h3>Ranthambhore Fort</h3><p>Walk through monumental gateways, ruined palaces and ancient temples at this 10th-century hill fort above the national park.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
+						<div class="place-photo"><img src="https://lh3.googleusercontent.com/grass-cs/ACvplmOjxx7ME9V41ue1q_2XHwvRygzmkp8gV5POKdhFYqNq-2VnBhEAulcCLaI4wkenBLO_itF0GVzDy-zZKhnKfYDyiIXAWBr2BHaQOprk1usmAlWuEEIm0eUrIIasjxO6dlzPTwrgcWTTqyLC=w326-h312-n-k-no" alt="Amareshwar Mahadev Temple near Sawai Madhopur" loading="lazy"><span class="place-tag">Sacred</span></div>
+						<div class="place-content"><h3>Amareshwar Mahadev Temple</h3><p>Visit this peaceful Shiva temple set amid the Aravalli hills, a popular local pilgrimage and picnic spot near Sawai Madhopur.</p><div class="place-meta"></div></div>
+					</article>
+					<article class="place-card reveal">
+						<div class="place-photo"><img src="https://ranthambhorenationalpark.in/images/blog/Rajiv-Gandhi-Regional-Museum-of-Natural-History-Ranthambore_1.jpg" alt="Rajiv Gandhi Regional Museum of Natural History in Sawai Madhopur" loading="lazy"><span class="place-tag">Museum</span></div>
+						<div class="place-content"><h3>Rajiv Gandhi Regional Museum</h3><p>Discover Rajasthan's wildlife, forests and natural history through engaging galleries and educational exhibits in Sawai Madhopur.</p><div class="place-meta"></div></div>
+					</article>
+					<article class="place-card reveal">
+						<div class="place-photo"><img src="https://lh3.googleusercontent.com/grass-cs/ACvplmPPPEMjUmGYmDsTBhc1Gj6YDuTp50A9RfctrucjRAkd9W9XVnZh6K92oHaH_IUMA4RSgSHkAmFZZq1jlVPD1K8vaMgu5fleqybXmfJ-rHhUWxfK1ueBEVi8fMThjIbpNxLb0kGSC349-d8=s1360-w1360-h1020-rw" alt="Local handicrafts on display at a Sawai Madhopur market" loading="lazy"><span class="place-tag">Local Culture</span></div>
+						<div class="place-content"><h3>Local Handicraft Market</h3><p>Browse colourful textiles, handmade crafts and locally made souvenirs while experiencing the lively culture of Sawai Madhopur.</p><div class="place-meta"></div></div>
+					</article>
+					<article class="place-card reveal">
+						<div class="place-photo"><img src="https://www.culturalsafaritours.com/wp-content/uploads/2021/09/chambalsanctuary.jpg" alt="Crocodiles at the National Chambal Sanctuary" loading="lazy"><span class="place-tag">Wildlife</span></div>
+						<div class="place-content"><h3>Crocodile Sanctuary & Booking</h3><p>Take a guided excursion to the Chambal region to spot crocodiles, gharials and river birds in their protected natural habitat.</p><div class="place-meta"><span><i class="fa-solid fa-shield-halved"></i> Guided Visit</span><a class="booking-link" href="https://wa.me/919414851478?text=Hello%2C%20I%20would%20like%20to%20book%20a%20crocodile%20sanctuary%20visit%20from%20Sawai%20Madhopur." target="_blank" rel="noopener noreferrer">Book Visit <i class="fa-solid fa-arrow-right"></i></a></div></div>
+					</article>
+					<article class="place-card reveal">
 						<div class="place-photo"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=82" alt="Pink sandstone facade of Hawa Mahal in Jaipur" loading="lazy"><span class="place-tag">Architecture</span></div>
 						<div class="place-content"><h3>Hawa Mahal</h3><p>Admire Jaipur's iconic pink sandstone facade, whose hundreds of latticed windows once let royal women observe the streets unseen.</p><div class="place-meta"></div></div>
 					</article>
@@ -427,11 +480,27 @@
 				</div>
 				<aside class="info-panel reveal">
 					<h3>Ranthambhore Essentials</h3>
-					<div class="info-row"><i class="fa-solid fa-calendar-days"></i><div><strong>Best time to visit</strong><span>October to March for pleasant weather; April to June for wildlife viewing.</span></div></div>
+					<div class="info-row safari-info"><i class="fa-solid fa-calendar-days"></i><div><strong>Safari Zone Calendar</strong><div class="safari-calendar"><div class="safari-season"><strong>Oct - Jun</strong><span><b class="zone">Zones 1-5</b> Open</span></div><div class="safari-season closed"><strong>Jul - Sep</strong><span><b class="zone">Zones 1-5</b> Closed</span></div><div class="safari-season always-open"><strong>All Year</strong><span><b class="zone">Zones 6-10</b> Open</span></div></div></div></div>
 					<div class="info-row"><i class="fa-solid fa-train"></i><div><strong>Getting here</strong><span>The nearest railhead has direct links to major cities. Jaipur Airport is about 180 km away.</span></div></div>
 					<div class="info-row"><i class="fa-solid fa-location-dot"></i><div><strong>Ideal stay</strong><span>Two to three nights for safaris, the fort and nearby lakes.</span></div></div>
 					<div class="info-row"><i class="fa-solid fa-temperature-half"></i><div><strong>What to pack</strong><span>Layers for winter mornings, sun protection, sturdy shoes and binoculars.</span></div></div>
 				</aside>
+				<section class="safari-hours reveal" aria-labelledby="safari-hours-title">
+					<header class="safari-hours-heading">
+						<div class="safari-hours-title"><i class="fa-solid fa-clock"></i><div><p>Plan your safari</p><h3 id="safari-hours-title">Ranthambhore Tiger Reserve Visiting Hours</h3></div></div>
+						<p class="safari-hours-note">Timings may change due to weather or park instructions. Confirm when booking.</p>
+					</header>
+					<div class="safari-hours-grid" role="table" aria-label="Ranthambhore Tiger Reserve safari visiting hours">
+						<div class="safari-hours-cell header mobile-hidden" role="columnheader"><i class="fa-regular fa-calendar"></i> Season</div>
+						<div class="safari-hours-cell header" role="columnheader"><i class="fa-solid fa-sun"></i> Morning Trip</div>
+						<div class="safari-hours-cell header" role="columnheader"><i class="fa-solid fa-cloud-sun"></i> Evening Trip</div>
+						<div class="safari-hours-cell date" role="cell">1 Oct - 31 Oct</div><div class="safari-hours-cell time" role="cell"><strong>6:30 AM</strong> to 10:00 AM</div><div class="safari-hours-cell time" role="cell"><strong>2:30 PM</strong> to 6:00 PM</div>
+						<div class="safari-hours-cell date" role="cell">1 Nov - 31 Jan</div><div class="safari-hours-cell time" role="cell"><strong>7:00 AM</strong> to 10:30 AM</div><div class="safari-hours-cell time" role="cell"><strong>2:00 PM</strong> to 5:30 PM</div>
+						<div class="safari-hours-cell date" role="cell">1 Feb - 31 Mar</div><div class="safari-hours-cell time" role="cell"><strong>6:30 AM</strong> to 10:00 AM</div><div class="safari-hours-cell time" role="cell"><strong>2:30 PM</strong> to 6:00 PM</div>
+						<div class="safari-hours-cell date" role="cell">1 Apr - 15 May</div><div class="safari-hours-cell time" role="cell"><strong>6:00 AM</strong> to 9:30 AM</div><div class="safari-hours-cell time" role="cell"><strong>3:00 PM</strong> to 6:30 PM</div>
+						<div class="safari-hours-cell date" role="cell">16 May - 30 Jun</div><div class="safari-hours-cell time" role="cell"><strong>6:00 AM</strong> to 9:30 AM</div><div class="safari-hours-cell time" role="cell"><strong>3:30 PM</strong> to 7:00 PM</div>
+					</div>
+				</section>
 			</div>
 		</section>
 
@@ -440,12 +509,12 @@
 				<header class="transport-intro reveal">
 					<div>
 						<p class="script">Your road, your ride</p>
-						<h2>Vehicles for <span>Every Journey</span></h2>
+						<h2><span>24/7 Taxi Available</span><br>Vehicles for Every Journey</h2>
 					</div>
 					<p>From Ranthambhore sightseeing and airport transfers to family holidays and long-distance tours, we arrange clean, comfortable vehicles with experienced drivers for travel across India.</p>
 				</header>
 				<div class="vehicle-grid reveal">
-					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-taxi"></i></span><div><h3>Local Taxi</h3><p>Convenient station pickups, hotel transfers and local sightseeing around Ranthambhore.</p></div></article>
+					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-taxi"></i></span><div><h3>Local Taxi</h3><p>Convenient station pickup and drop, hotel transfers and local sightseeing around Ranthambhore.</p></div></article>
 					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-car-side"></i></span><div><h3>Sedan Cars</h3><p>Comfortable, economical travel for couples, solo guests and small families.</p></div></article>
 					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-truck-pickup"></i></span><div><h3>SUV &amp; MUV</h3><p>Spacious vehicles with extra luggage room for families and longer road trips.</p></div></article>
 					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-van-shuttle"></i></span><div><h3>Tempo Traveller</h3><p>Push-back seating and generous space for group tours, events and pilgrimages.</p></div></article>
