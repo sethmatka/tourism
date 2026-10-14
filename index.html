@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Explore Ranthambhore safaris, forts, lakes and local heritage.">
-	<title>Explore Ranthambhore | Explore Ranthambhore</title>
+	<meta name="description" content="Explore Ranthambore safaris, forts, lakes and local heritage.">
+	<title>Explore Ranthambore Taxi | Explore Ranthambore Taxi</title>
 	<link rel="icon" type="image/jpeg" href="logo.jpeg">
 	<link rel="apple-touch-icon" href="logo.jpeg">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,6 +116,7 @@
 			text-shadow: 0 4px 25px rgba(0,0,0,.25);
 		}
 		h1 span { display: block; color: var(--gold); }
+		h1 .taxi { display: inline-block; margin-left: .2em; color: inherit; }
 		.hero-rule { display: flex; align-items: center; gap: 10px; width: 230px; margin: 27px 0 16px; color: var(--gold); }
 		.hero-rule::before, .hero-rule::after { content: ""; height: 1px; flex: 1; background: currentColor; }
 		.hero-kicker { margin: 0 0 13px; font-size: 18px; letter-spacing: 1.5px; text-transform: uppercase; }
@@ -246,6 +247,22 @@
 		.transport-actions { display: flex; gap: 10px; flex: 0 0 auto; }
 		.transport-actions .btn { min-height: 42px; }
 
+		.feedback { padding: 58px 0 62px; background: var(--cream); }
+		.feedback .section-heading { margin-bottom: 25px; }
+		.feedback-grid { overflow: hidden; }
+		.feedback-track { display: flex; width: max-content; animation: feedback-scroll 75s linear infinite; will-change: transform; }
+		.feedback-group { display: flex; gap: 18px; padding-right: 18px; }
+		.feedback-card { position: relative; width: calc((min(1180px, 100vw - 40px) - 36px) / 3); min-height: 205px; display: flex; flex: 0 0 auto; flex-direction: column; padding: 22px; background: var(--white); border-top: 3px solid var(--gold); box-shadow: 0 9px 24px rgba(25,35,29,.08); }
+		.feedback-card.reveal { opacity: 1; transform: none; }
+		.feedback-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; }
+		.feedback-card blockquote { margin: 14px 0 18px; color: var(--ink); font-size: 12px; line-height: 1.65; }
+		.feedback-card footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: auto; padding: 13px 0 0; color: inherit; background: none; border-top: 1px solid #e8e1d5; }
+		.feedback-card cite { font-size: 12px; font-style: normal; font-weight: 700; text-transform: uppercase; }
+		.sample-label { padding: 4px 7px; color: var(--muted); background: #eee7da; font-size: 8px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; white-space: nowrap; }
+		@keyframes feedback-scroll {
+			to { transform: translateX(-50%); }
+		}
+
 		.gallery { padding: 82px 0; background: var(--white); }
 		.gallery-grid { display: grid; grid-template-columns: 1.25fr .85fr .85fr 1.25fr; grid-template-rows: 250px; gap: 10px; }
 		.gallery-item { position: relative; overflow: hidden; }
@@ -321,6 +338,7 @@
 			.journey-grid { gap: 35px; }
 			.transport-intro { grid-template-columns: 1fr; gap: 16px; }
 			.vehicle-grid { grid-template-columns: 1fr 1fr; }
+			.feedback-card { width: calc((100vw - 58px) / 2); }
 			.transport-cta { align-items: flex-start; flex-direction: column; }
 			.gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; }
 			.footer-grid { grid-template-columns: 1fr 1fr; }
@@ -341,6 +359,7 @@
 			.feature { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
 			.place-grid, .journey-grid { grid-template-columns: 1fr; }
 			.places, .transport, .gallery { padding: 65px 0; }
+			.feedback { padding: 48px 0 52px; }
 			.section-heading h2 { font-size: 40px; }
 			.place-photo { height: 230px; }
 			.journey { padding: 70px 0; background-attachment: scroll; }
@@ -361,19 +380,24 @@
 			.vehicle-item { min-height: 150px; padding: 24px 20px; }
 			.transport-cta { padding: 24px 20px; }
 			.transport-actions { width: 100%; flex-direction: column; }
+			.feedback-card { width: calc(100vw - 28px); min-height: 200px; }
 			.gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 230px); }
 			.footer-grid { grid-template-columns: 1fr; gap: 30px; }
 			.footer-bottom { flex-direction: column; gap: 8px; }
 			.floating-actions { right: 14px; bottom: 14px; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.feedback-track { animation: none; }
 		}
 	</style>
 </head>
 <body>
 	<header class="hero" id="home">
 		<nav class="nav container" aria-label="Main navigation">
-			<a class="brand" href="#home" aria-label="Explore Ranthambhore home">
+			<a class="brand" href="#home" aria-label="Explore Ranthambore home">
 				<span class="brand-mark"><i class="fa-solid fa-paw"></i></span>
-				<span><strong class="brand-title">Explore Ranthambhore</strong><small class="brand-subtitle">RAJASTHAN</small></span>
+				<span><strong class="brand-title">Explore Ranthambore Taxi</strong><small class="brand-subtitle">RAJASTHAN</small></span>
 			</a>
 			<div class="nav-links" id="navLinks">
 				<a class="active" href="#home">Home</a>
@@ -389,10 +413,10 @@
 
 		<div class="hero-copy container">
 			<p class="script">Answer the call of the wild</p>
-			<h1>Explore <span>Ranthambhore</span></h1>
+			<h1>Explore <span>Ranthambore</span> Taxi</h1>
 			<div class="hero-rule"><i class="fa-solid fa-paw"></i></div>
 			<p class="hero-kicker">Where wilderness meets royal history</p>
-			<p class="hero-description">Track the tiger, climb an ancient hill fort, watch birds over quiet lakes, and discover the living culture of Ranthambhore.</p>
+			<p class="hero-description">Track the tiger, climb an ancient hill fort, watch birds over quiet lakes, and discover the living culture of Ranthambore.</p>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="#places">Explore Places <i class="fa-solid fa-arrow-right"></i></a>
 				<a class="btn btn-outline" href="#plan"><i class="fa-regular fa-circle-play"></i> Plan Your Trip</a>
@@ -402,7 +426,7 @@
 
 	<section class="feature-strip" aria-label="Travel highlights">
 		<div class="features container">
-			<article class="feature"><span class="feature-icon"><i class="fa-solid fa-paw"></i></span><div><h3>Jungle Safaris</h3><p>Meet Ranthambhore's wild residents in their natural home.</p></div></article>
+			<article class="feature"><span class="feature-icon"><i class="fa-solid fa-paw"></i></span><div><h3>Jungle Safaris</h3><p>Meet Ranthambore's wild residents in their natural home.</p></div></article>
 			<article class="feature"><span class="feature-icon"><i class="fa-solid fa-landmark"></i></span><div><h3>Living Heritage</h3><p>Walk through Ranthambore Fort, temples and stories shaped over centuries.</p></div></article>
 			<article class="feature"><span class="feature-icon"><i class="fa-solid fa-binoculars"></i></span><div><h3>Local Guides</h3><p>Explore with trained naturalists who know every trail.</p></div></article>
 			<article class="feature"><span class="feature-icon"><i class="fa-solid fa-seedling"></i></span><div><h3>Travel Responsibly</h3><p>Choose experiences that protect wildlife and communities.</p></div></article>
@@ -416,57 +440,57 @@
 					<p class="script">Worth the journey</p>
 					<h2>Places to Visit</h2>
 					<div class="heading-rule"><i class="fa-solid fa-paw"></i></div>
-					<p>From tiger territory and formidable ramparts to peaceful wetlands, Ranthambhore rewards every kind of curious traveller.</p>
+					<p>From tiger territory and formidable ramparts to peaceful wetlands, Ranthambore rewards every kind of curious traveller.</p>
 				</header>
 
 				<div class="place-grid">
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=82" alt="Tiger walking through Ranthambhore" loading="lazy"><span class="place-tag">Wildlife</span></div>
-						<div class="place-content"><h3>Jungle Safari</h3><p>Explore Ranthambhore's dry forest, rocky ridges and lakes while looking for  tigers, leopards, deer, bear and native birdlife.</p><div class="place-meta"><span><i class="fa-solid fa-paw"></i> Tiger Safari</span><a class="booking-link" href="https://wa.me/919414851478?text=Hello%2C%20I%20would%20like%20to%20book%20a%20jungle%20safari%20in%20Ranthambhore." target="_blank" rel="noopener noreferrer">Book Visit <i class="fa-solid fa-arrow-right"></i></a></div></div>
+						<div class="place-photo"><img src="junglesafari.jpg" alt="Tiger walking through Ranthambore" loading="lazy"><span class="place-tag">Wildlife</span></div>
+						<div class="place-content"><h3>Jungle Safari</h3><p>Explore Ranthambore's dry forest, rocky ridges and lakes while looking for  tigers, leopards, deer, bear and native birdlife.</p><div class="place-meta"><span><i class="fa-solid fa-paw"></i> Tiger Safari</span><a class="booking-link" href="https://wa.me/919414851478?text=Hello%2C%20I%20would%20like%20to%20book%20a%20jungle%20safari%20in%20Ranthambhore." target="_blank" rel="noopener noreferrer">Book Visit <i class="fa-solid fa-arrow-right"></i></a></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=900&q=82" alt="Amer Fort rising above Maota Lake near Jaipur" loading="lazy"><span class="place-tag">Royal Heritage</span></div>
+						<div class="place-photo"><img src="amerfort.jpg" alt="Amer Fort rising above Maota Lake near Jaipur" loading="lazy"><span class="place-tag">Royal Heritage</span></div>
 						<div class="place-content"><h3>Amer Fort</h3><p>Discover grand courtyards, ornate gateways and the glittering Amer Fort at this celebrated hill fort overlooking Maota Lake near Jaipur.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="trinetra-ganesh-temple.jpg" alt="Trinetra Ganesh shrine inside Ranthambhore Fort" loading="eager"><span class="place-tag">Sacred</span></div>
-						<div class="place-content"><h3>Trinetra Ganesh Temple</h3><p>Seek blessings at the revered three-eyed Ganesh shrine inside Ranthambhore Fort, where devotees also worship Riddhi and Siddhi.</p><div class="place-meta"></div></div>
+						<div class="place-photo"><img src="trinetra-ganesh-temple.jpg" alt="Trinetra Ganesh shrine inside Ranthambore Fort" loading="eager"><span class="place-tag">Sacred</span></div>
+						<div class="place-content"><h3>Trinetra Ganesh Temple</h3><p>Seek blessings at the revered three-eyed Ganesh shrine inside Ranthambore Fort, where devotees also worship Riddhi and Siddhi.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="ranthambhore-fort.jpg" alt="Historic Ranthambhore Fort overlooking the surrounding landscape" loading="lazy"><span class="place-tag">UNESCO Heritage</span></div>
-						<div class="place-content"><h3>Ranthambhore Fort</h3><p>Walk through monumental gateways, ruined palaces and ancient temples at this 10th-century hill fort above the national park.</p><div class="place-meta"></div></div>
+						<div class="place-photo"><img src="Ranthambhore-fort.jpg" alt="Historic Ranthambore Fort overlooking the surrounding landscape" loading="lazy"><span class="place-tag">UNESCO Heritage</span></div>
+						<div class="place-content"><h3>Ranthambore Fort</h3><p>Walk through monumental gateways, ruined palaces and ancient temples at this 10th-century hill fort above the national park.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://lh3.googleusercontent.com/grass-cs/ACvplmOjxx7ME9V41ue1q_2XHwvRygzmkp8gV5POKdhFYqNq-2VnBhEAulcCLaI4wkenBLO_itF0GVzDy-zZKhnKfYDyiIXAWBr2BHaQOprk1usmAlWuEEIm0eUrIIasjxO6dlzPTwrgcWTTqyLC=w326-h312-n-k-no" alt="Amareshwar Mahadev Temple near Sawai Madhopur" loading="lazy"><span class="place-tag">Sacred</span></div>
+						<div class="place-photo"><img src="amreshwar.jpeg" alt="Amareshwar Mahadev Temple near Sawai Madhopur" loading="lazy"><span class="place-tag">Sacred</span></div>
 						<div class="place-content"><h3>Amareshwar Mahadev Temple</h3><p>Visit this peaceful Shiva temple set amid the Aravalli hills, a popular local pilgrimage and picnic spot near Sawai Madhopur.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://ranthambhorenationalpark.in/images/blog/Rajiv-Gandhi-Regional-Museum-of-Natural-History-Ranthambore_1.jpg" alt="Rajiv Gandhi Regional Museum of Natural History in Sawai Madhopur" loading="lazy"><span class="place-tag">Museum</span></div>
+						<div class="place-photo"><img src="rajivgandhimusuem.jpg" alt="Rajiv Gandhi Regional Museum of Natural History in Sawai Madhopur" loading="lazy"><span class="place-tag">Museum</span></div>
 						<div class="place-content"><h3>Rajiv Gandhi Regional Museum</h3><p>Discover Rajasthan's wildlife, forests and natural history through engaging galleries and educational exhibits in Sawai Madhopur.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://lh3.googleusercontent.com/grass-cs/ACvplmPPPEMjUmGYmDsTBhc1Gj6YDuTp50A9RfctrucjRAkd9W9XVnZh6K92oHaH_IUMA4RSgSHkAmFZZq1jlVPD1K8vaMgu5fleqybXmfJ-rHhUWxfK1ueBEVi8fMThjIbpNxLb0kGSC349-d8=s1360-w1360-h1020-rw" alt="Local handicrafts on display at a Sawai Madhopur market" loading="lazy"><span class="place-tag">Local Culture</span></div>
+						<div class="place-photo"><img src="ranthambore-maharani-handicraft-sawai-madhopur-bttja5ig2j.jpg.jpeg" alt="Local handicrafts on display at a Sawai Madhopur market" loading="lazy"><span class="place-tag">Local Culture</span></div>
 						<div class="place-content"><h3>Local Handicraft Market</h3><p>Browse colourful textiles, handmade crafts and locally made souvenirs while experiencing the lively culture of Sawai Madhopur.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://www.culturalsafaritours.com/wp-content/uploads/2021/09/chambalsanctuary.jpg" alt="Crocodiles at the National Chambal Sanctuary" loading="lazy"><span class="place-tag">Wildlife</span></div>
+						<div class="place-photo"><img src="crocodilesanctuary.jpg" alt="Crocodiles at the National Chambal Sanctuary" loading="lazy"><span class="place-tag">Wildlife</span></div>
 						<div class="place-content"><h3>Crocodile Sanctuary & Booking</h3><p>Take a guided excursion to the Chambal region to spot crocodiles, gharials and river birds in their protected natural habitat.</p><div class="place-meta"><span><i class="fa-solid fa-shield-halved"></i> Guided Visit</span><a class="booking-link" href="https://wa.me/919414851478?text=Hello%2C%20I%20would%20like%20to%20book%20a%20crocodile%20sanctuary%20visit%20from%20Sawai%20Madhopur." target="_blank" rel="noopener noreferrer">Book Visit <i class="fa-solid fa-arrow-right"></i></a></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/17/af/f0/kala-gora-hinduism-temple.jpg" alt="Kala Gora Temple in Sawai Madhopur" loading="lazy"><span class="place-tag">Sacred</span></div>
+						<div class="place-photo"><img src="kalagora.jpg" alt="Kala Gora Temple in Sawai Madhopur" loading="lazy"><span class="place-tag">Sacred</span></div>
 						<div class="place-content"><h3>Kala Gora Temple</h3><p>Visit this historic local temple in Sawai Madhopur, known for its distinctive twin deities and deep connection with regional faith and folklore.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmqcc6gp76SZ8nWMaAEDN1DuWb3B1W2s080JjbYrAzLHuc6xCwsfzS80iZA-_8gqchGNK0vwDx3QRjGUhgtorrjZBrwMWYQ3gGVizMU3u3-ge2j7v6clrOMWE7nDff4O4-3o--w=w408-h306-k-no" alt="Shri Chamatkar Ji Digambar Jain Temple in Sawai Madhopur" loading="lazy"><span class="place-tag">Jain Heritage</span></div>
+						<div class="place-photo"><img src="Chamatkarji_Jain_temple_(3).jpg.jpeg" alt="Shri Chamatkar Ji Digambar Jain Temple in Sawai Madhopur" loading="lazy"><span class="place-tag">Jain Heritage</span></div>
 						<div class="place-content"><h3>Shri Chamatkar Ji Digambar Jain Temple</h3><p>Experience the serene atmosphere and intricate sacred architecture of this revered Digambar Jain pilgrimage site in Sawai Madhopur.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=82" alt="Pink sandstone facade of Hawa Mahal in Jaipur" loading="lazy"><span class="place-tag">Architecture</span></div>
+						<div class="place-photo"><img src="hawamahal.jpg" alt="Pink sandstone facade of Hawa Mahal in Jaipur" loading="lazy"><span class="place-tag">Architecture</span></div>
 						<div class="place-content"><h3>Hawa Mahal</h3><p>Admire Jaipur's iconic pink sandstone facade, whose hundreds of latticed windows once let royal women observe the streets unseen.</p><div class="place-meta"></div></div>
 					</article>
 					<article class="place-card reveal">
-						<div class="place-photo"><img src="ranthambhore-hotel.jpg" alt="Welcoming heritage-style resort for a stay near Ranthambhore" loading="lazy"><span class="place-tag">Stay</span></div>
-						<div class="place-content"><h3>Hotel Booking</h3><p>Choose from wildlife resorts, heritage hotels and comfortable family stays near Ranthambhore, with options for every travel style.</p><div class="place-meta"><span><i class="fa-solid fa-bed"></i></span><a class="booking-link" href="https://wa.me/919414851478?text=Hello%2C%20I%20would%20like%20to%20book%20a%20hotel%20in%20Ranthambhore." target="_blank" rel="noopener noreferrer">Book Hotel <i class="fa-solid fa-arrow-right"></i></a></div></div>
+						<div class="place-photo"><img src="Ranthambhore-hotel.jpg" alt="Welcoming heritage-style resort for a stay near Ranthambore" loading="lazy"><span class="place-tag">Stay</span></div>
+						<div class="place-content"><h3>Hotel Booking</h3><p>Choose from wildlife resorts, heritage hotels and comfortable family stays near Ranthambore, with options for every travel style.</p><div class="place-meta"><span><i class="fa-solid fa-bed"></i></span><a class="booking-link" href="https://wa.me/919414851478?text=Hello%2C%20I%20would%20like%20to%20book%20a%20hotel%20in%20Ranthambhore." target="_blank" rel="noopener noreferrer">Book Hotel <i class="fa-solid fa-arrow-right"></i></a></div></div>
 					</article>
 				</div>
 			</div>
@@ -487,7 +511,7 @@
 					<a class="btn btn-primary" href="tel:+919414851478">Talk to a Local Expert <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
 				<aside class="info-panel reveal">
-					<h3>Ranthambhore Essentials</h3>
+					<h3>Ranthambore Essentials</h3>
 					<div class="info-row safari-info"><i class="fa-solid fa-calendar-days"></i><div><strong>Safari Zone Calendar</strong><div class="safari-calendar"><div class="safari-season"><strong>Oct - Jun</strong><span><b class="zone">Zones 1-5</b> Open</span></div><div class="safari-season closed"><strong>Jul - Sep</strong><span><b class="zone">Zones 1-5</b> Closed</span></div><div class="safari-season always-open"><strong>All Year</strong><span><b class="zone">Zones 6-10</b> Open</span></div></div></div></div>
 					<div class="info-row"><i class="fa-solid fa-train"></i><div><strong>Getting here</strong><span>The nearest railhead has direct links to major cities. Jaipur Airport is about 180 km away.</span></div></div>
 					<div class="info-row"><i class="fa-solid fa-location-dot"></i><div><strong>Ideal stay</strong><span>Two to three nights for safaris, the fort and nearby lakes.</span></div></div>
@@ -495,10 +519,10 @@
 				</aside>
 				<section class="safari-hours reveal" aria-labelledby="safari-hours-title">
 					<header class="safari-hours-heading">
-						<div class="safari-hours-title"><i class="fa-solid fa-clock"></i><div><p>Plan your safari</p><h3 id="safari-hours-title">Ranthambhore Tiger Reserve Visiting Hours</h3></div></div>
+						<div class="safari-hours-title"><i class="fa-solid fa-clock"></i><div><p>Plan your safari</p><h3 id="safari-hours-title">Ranthambore Tiger Reserve Visiting Hours</h3></div></div>
 						<p class="safari-hours-note">Timings may change due to weather or park instructions. Confirm when booking.</p>
 					</header>
-					<div class="safari-hours-grid" role="table" aria-label="Ranthambhore Tiger Reserve safari visiting hours">
+					<div class="safari-hours-grid" role="table" aria-label="Ranthambore Tiger Reserve safari visiting hours">
 						<div class="safari-hours-cell header mobile-hidden" role="columnheader"><i class="fa-regular fa-calendar"></i> Season</div>
 						<div class="safari-hours-cell header" role="columnheader"><i class="fa-solid fa-sun"></i> Morning Trip</div>
 						<div class="safari-hours-cell header" role="columnheader"><i class="fa-solid fa-cloud-sun"></i> Evening Trip</div>
@@ -519,10 +543,10 @@
 						<p class="script">Your road, your ride</p>
 						<h2><span>24/7 Taxi Available</span><br>Vehicles for Every Journey</h2>
 					</div>
-					<p>From Ranthambhore sightseeing and Jaipur, Delhi airport pickup-drop and transfers to family holidays and Rajasthan tour, we arrange clean, comfortable vehicles with experienced drivers for travel across India.</p>
+					<p>From Ranthambore sightseeing and Jaipur, Delhi airport pickup-drop and transfers to family holidays and Rajasthan tour, we arrange clean, comfortable vehicles with experienced drivers for travel across India.</p>
 				</header>
 				<div class="vehicle-grid reveal">
-					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-taxi"></i></span><div><h3>Local Taxi</h3><p>Convenient Sawai Madhopur Railway station pickup and drop, hotel transfers and local sightseeing around Ranthambhore.</p></div></article>
+					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-taxi"></i></span><div><h3>Local Taxi</h3><p>Convenient Sawai Madhopur Railway station pickup and drop, hotel transfers and local sightseeing around Ranthambore.</p></div></article>
 					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-car-side"></i></span><div><h3>Sedan Cars</h3><p>Comfortable, economical travel for couples, solo guests and small families.</p></div></article>
 					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-truck-pickup"></i></span><div><h3>SUV &amp; MUV</h3><p>Spacious vehicles with extra luggage room for families and longer road trips.</p></div></article>
 					<article class="vehicle-item"><span class="vehicle-icon"><i class="fa-solid fa-van-shuttle"></i></span><div><h3>Tempo Traveller</h3><p>Push-back seating and generous space for group tours, events and pilgrimages.</p></div></article>
@@ -539,18 +563,50 @@
 			</div>
 		</section>
 
+		<section class="feedback" id="feedback" aria-labelledby="feedback-title">
+			<div class="container">
+				<header class="section-heading reveal">
+					<p class="script">Stories from the road</p>
+					<h2 id="feedback-title">Traveler Feedback</h2>
+					<div class="heading-rule"><i class="fa-solid fa-quote-left"></i></div>
+					<p>Example comments showing how customer experiences can appear here. Replace these samples with verified feedback before publishing.</p>
+				</header>
+				<div class="feedback-grid" role="region" aria-label="Continuously scrolling sample traveler reviews">
+					<div class="feedback-track" id="feedbackTrack">
+						<div class="feedback-group">
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"Our early-morning safari transfer was punctual and comfortable. The driver knew the route well and made the start of our day completely stress-free."</blockquote><footer><cite>Aarav Sharma</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"The vehicle was clean, spacious and perfect for our family. Every pickup happened on time, and communication was clear throughout the trip."</blockquote><footer><cite>Priya Mehta</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"We received useful local suggestions for the fort, temples and market. The flexible itinerary helped us see much more without feeling rushed."</blockquote><footer><cite>Rohan Kapoor</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"Booking through WhatsApp was simple and quick. Our questions were answered patiently, and all the arrangements matched what had been promised."</blockquote><footer><cite>Neha Verma</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"The railway station pickup was smooth even though our train arrived late. Our driver stayed in contact and welcomed us warmly when we arrived."</blockquote><footer><cite>Amit Joshi</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"Our Jaipur to Ranthambore journey was safe and relaxing. The driver maintained a comfortable pace and stopped whenever our children needed a break."</blockquote><footer><cite>Kavita Singh</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"We appreciated the honest advice about safari timings and what to carry. It made our first visit to Ranthambore much easier to plan."</blockquote><footer><cite>Arjun Malhotra</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"The local sightseeing tour was thoughtfully organised. We had enough time at every stop, and the driver shared helpful details about each place."</blockquote><footer><cite>Sneha Patel</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"Our tempo traveller was comfortable for the whole group and had plenty of luggage space. The long journey felt organised from beginning to end."</blockquote><footer><cite>Vivek Rao</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"The hotel and taxi coordination worked perfectly. We did not have to worry about calling different people for every part of our holiday."</blockquote><footer><cite>Pooja Nair</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"The driver was courteous and drove carefully on every route. We felt safe travelling with our parents and would gladly use the service again."</blockquote><footer><cite>Rahul Gupta</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"A last-minute change to our schedule was handled calmly and quickly. The team helped us rearrange transport without disrupting the rest of the day."</blockquote><footer><cite>Ananya Iyer</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"Visiting the nearby temples and heritage sites with a local driver saved us time. The day felt personal rather than like a standard package tour."</blockquote><footer><cite>Karan Bhatia</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"The fare and trip details were explained before we confirmed. There were no surprises, and the service remained professional throughout our stay."</blockquote><footer><cite>Meera Desai</cite><span class="sample-label">Sample review</span></footer></article>
+					<article class="feedback-card reveal"><div class="feedback-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote>"From arrival to departure, every transfer was dependable. The friendly local assistance helped make Ranthambore the highlight of our Rajasthan trip."</blockquote><footer><cite>Siddharth Jain</cite><span class="sample-label">Sample review</span></footer></article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="gallery" id="gallery">
 			<div class="container">
 				<header class="section-heading reveal">
 					<p class="script">Postcards from the wild</p>
-					<h2>Ranthambhore Moments</h2>
+					<h2>Ranthambore Moments</h2>
 					<div class="heading-rule"><i class="fa-solid fa-camera"></i></div>
 				</header>
 				<div class="gallery-grid reveal">
-					<div class="gallery-item"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=80" alt="Tiger in the forest" loading="lazy"><span>Tiger country</span></div>
+					<div class="gallery-item"><img src="junglesafari.jpg" alt="Tiger in the forest" loading="lazy"><span>Tiger country</span></div>
 					<div class="gallery-item"><img src="chambal-river.jpg" alt="Chambal River curving through the green landscape near Dholpur, Rajasthan" loading="lazy"><span>Chambal River</span></div>
-					<div class="gallery-item"><img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=700&q=80" alt="Rajasthan fort architecture" loading="lazy"><span>Royal legacy</span></div>
-					<div class="gallery-item"><img src="golden-evenings.jpg" alt="Historic Ranthambhore gateway beside a stone-lined cascade" loading="eager"><span>Golden evenings</span></div>
+					<div class="gallery-item"><img src="royallegacy.jpg" alt="Rajasthan fort architecture" loading="lazy"><span>Royal legacy</span></div>
+					<div class="gallery-item"><img src="golden-evenings.jpg" alt="Historic Ranthambore gateway beside a stone-lined cascade" loading="eager"><span>Golden evenings</span></div>
 				</div>
 			</div>
 		</section>
@@ -559,15 +615,15 @@
 	<footer id="contact">
 		<div class="footer-grid container">
 			<div class="footer-about">
-				<a class="brand" href="#home"><span class="brand-mark"><i class="fa-solid fa-paw"></i></span><span><strong class="brand-title">Explore Ranthambhore</strong><small class="brand-subtitle">RAJASTHAN</small></span></a>
-				<p>Thoughtful journeys into the wildlife, heritage and local culture of Ranthambhore.</p>
+				<a class="brand" href="#home"><span class="brand-mark"><i class="fa-solid fa-paw"></i></span><span><strong class="brand-title">Explore Ranthambore</strong><small class="brand-subtitle">RAJASTHAN</small></span></a>
+				<p>Thoughtful journeys into the wildlife, heritage and local culture of Ranthambore.</p>
 				<div class="footer-social"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
 			</div>
-			<div class="footer-col"><h3>Quick Links</h3><a href="#home">Home</a><a href="#places">Places</a><a href="#plan">Plan Visit</a><a href="#vehicles">Vehicles</a><a href="#gallery">Gallery</a></div>
+			<div class="footer-col"><h3>Quick Links</h3><a href="#home">Home</a><a href="#places">Places</a><a href="#plan">Plan Visit</a><a href="#vehicles">Vehicles</a><a href="#feedback">Feedback</a><a href="#gallery">Gallery</a></div>
 			<div class="footer-col"><h3>Contact</h3><p><i class="fa-solid fa-phone"></i> +91 94148 51478<br><i class="fa-solid fa-location-dot"></i>Adrash Nagar A , Ranthambore, Sawai Madhopur<br><i class="fa-solid fa-envelope"></i>askrajuverma3031@gmail.com</p></div>
 			<div class="footer-col"><h3>Start Exploring</h3><p>Build a journey around the landscapes and stories you want to discover.</p><a class="btn btn-primary" href="tel:+919414851478">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
 		</div>
-		<div class="footer-bottom container"><span>&copy; 2026 Explore Ranthambhore. All rights reserved.</span><span>Made for travellers who tread lightly.</span></div>
+		<div class="footer-bottom container"><span>&copy; 2026 Explore Ranthambore. All rights reserved.</span><span>Made for travellers who tread lightly.</span></div>
 	</footer>
 
 	<div class="floating-actions" aria-label="Contact options">
@@ -603,6 +659,12 @@
 		}, { threshold: 0.12 });
 
 		document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+		const feedbackTrack = document.getElementById('feedbackTrack');
+		const feedbackCopy = feedbackTrack.querySelector('.feedback-group').cloneNode(true);
+		feedbackCopy.setAttribute('aria-hidden', 'true');
+		feedbackCopy.inert = true;
+		feedbackTrack.appendChild(feedbackCopy);
 	</script>
 </body>
 </html>
